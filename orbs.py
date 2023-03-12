@@ -8,6 +8,7 @@ while True:
 	try:
 		file_name = input("Please enter the name of the file to analyse: ")
 		with open(file_name + ".log") as f:
+
 			for line in f:
 
 				# Once we reach the orbital section, start adding the orbitals to lists (one for O and one for V)
@@ -39,4 +40,6 @@ LUMO = virt[0]
 
 # Calculate HOMO-LUMO gap, convert to eV and print this information out
 gap = (LUMO - HOMO) * 27.211
+print("The HOMO energy is {:0.2f} eV".format(HOMO))
+print("The LUMO energy is {:0.2f} eV".format(LUMO))
 print("The HOMO-LUMO gap is {:0.2f} eV".format(gap))
