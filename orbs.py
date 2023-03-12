@@ -9,7 +9,10 @@ while True:
 		file_name = input("Please enter the name of the file to analyse: ")
 		with open(file_name + ".log") as f:
 			for line in f:
-
+				if "Orbital energies and kinetic energies (alpha):" in line:
+					next(f)
+					for inner_line in f:
+						print(inner_line)
 	except FileNotFoundError:
 		print("Sorry, the file was not found.")
 	else:
