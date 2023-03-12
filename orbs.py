@@ -37,10 +37,6 @@ while True:
 HOMO = occup[-1]
 LUMO = virt[0]
 
-print(HOMO)
-print(LUMO)
-
 # Calculate HOMO-LUMO gap, convert to eV and print this information out
 gap = (LUMO - HOMO) * 27.211
-
-print(gap)
+print("The HOMO-LUMO gap is {:0.2f} eV".format(gap))
