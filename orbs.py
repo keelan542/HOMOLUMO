@@ -1,3 +1,7 @@
+# Creating dictionaries to hold occupied and virtual orbital energies
+occup = {}
+virt = {}
+
 # Ask user for the name of the file
 # Open up the file and start reading it, if the file exists
 while True:
@@ -5,8 +9,8 @@ while True:
 		file_name = input("Please enter the name of the file to analyse: ")
 		with open(file_name + ".log") as f:
 			for line in f:
-				continue
-	except:
+
+	except FileNotFoundError:
 		print("Sorry, the file was not found.")
 	else:
 		break
