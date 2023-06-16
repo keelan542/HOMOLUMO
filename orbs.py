@@ -1,5 +1,6 @@
 # Import statements
 import sys
+import matplotlib.pyplot as plt
 
 # Creating lists to hold occupied and virtual orbital energies
 occup = []
@@ -36,11 +37,19 @@ except FileNotFoundError:
 	sys.exit()
 
 # Locate HOMO and LUMO energies from lists
-HOMO = occup[-1]
-LUMO = virt[0]
+HOMO = occup[-1] * 27.211
+LUMO = virt[0] * 27.211
 
 # Calculate HOMO-LUMO gap, convert to eV and print this information out
-gap = (LUMO - HOMO) * 27.211
+gap = (LUMO - HOMO)
 print("The HOMO energy is {:0.2f} eV".format(HOMO))
 print("The LUMO energy is {:0.2f} eV".format(LUMO))
 print("The HOMO-LUMO gap is {:0.2f} eV".format(gap))
+
+# Placing HOMO and LUMO into list
+homo_lumo = [HOMO, LUMO]
+
+# Plotting code
+plt.plot([1,1], homo_lumo, marker='_', markersize=35, linestyle='None')
+plt.tick_params('x', labelbottom=False, bottom=False)
+plt.show()
