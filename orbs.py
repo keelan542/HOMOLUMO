@@ -49,6 +49,7 @@ print("The HOMO-LUMO gap is {:0.2f} eV".format(gap))
 
 # Placing HOMO and LUMO into list
 homo_lumo = [HOMO, LUMO]
+homo_lumo_labels = ['HOMO', 'LUMO']
 
 # Plotting code
 plt.plot([1,1], homo_lumo, marker='_', markersize=35, linestyle='None')
@@ -57,6 +58,8 @@ plt.tick_params('x', labelbottom=False, bottom=False)
 plt.title('Orbital Energy Plot')
 plt.ylabel('Orbital Energy [eV]')
 for i in range(2):
-	plt.text(1, homo_lumo[i]+0.1, '{:0.2f}'.format(homo_lumo[i]), fontweight='bold', 
-		horizontalalignment='center')
+	plt.text(1, homo_lumo[i], '{:0.2f}'.format(homo_lumo[i]), fontweight='bold', 
+		horizontalalignment='center', verticalalignment='bottom')
+	plt.text(1, homo_lumo[i], '{label}'.format(label=homo_lumo_labels[i]), fontweight='bold', 
+		horizontalalignment='center', verticalalignment='top')
 plt.show()
