@@ -57,8 +57,8 @@ plt.yticks(np.arange(HOMO-(gap/2), LUMO+(gap/2)))
 plt.tick_params('x', labelbottom=False, bottom=False)
 plt.title('Orbital Energy Plot')
 plt.ylabel('Orbital Energy [eV]')
-plt.text(1, HOMO+((LUMO-HOMO)/2), 'Gap = {:0.2f} eV'.format(gap), horizontalalignment='center', 
-	fontweight='bold', bbox=dict(boxstyle='square, pad=1', ec='none'), color='white')
+plt.annotate('Gap = {:0.2f} eV'.format(gap), (1, HOMO+((LUMO-HOMO)/2)),
+	xytext=(0,0), textcoords='offset points', ha='center', fontweight='bold', bbox=dict(boxstyle='square, pad=1', ec='none'), color='white')
 for i in range(2):
 	plt.annotate('{level} = {:0.2f}'.format(homo_lumo[i], level=homo_lumo_labels[i]), (1, homo_lumo[i]), 
 		xytext=(0, 5.0), textcoords='offset points', ha='center')
