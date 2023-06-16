@@ -52,7 +52,7 @@ homo_lumo = [HOMO, LUMO]
 homo_lumo_labels = ['HOMO', 'LUMO']
 
 # Plotting code
-plt.plot([1,1], homo_lumo, marker='_', markersize=35, linestyle='None')
+plt.plot([1,1], homo_lumo, marker='_', markersize=40, linestyle='None', markeredgewidth=3)
 plt.yticks(np.arange(HOMO-(gap/2), LUMO+(gap/2)))
 plt.tick_params('x', labelbottom=False, bottom=False)
 plt.title('Orbital Energy Plot')
