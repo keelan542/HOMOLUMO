@@ -52,4 +52,8 @@ homo_lumo = [HOMO, LUMO]
 # Plotting code
 plt.plot([1,1], homo_lumo, marker='_', markersize=35, linestyle='None')
 plt.tick_params('x', labelbottom=False, bottom=False)
+plt.title('Orbital Energy Plot')
+plt.ylabel('Orbital Energy [eV]')
+for i in range(2):
+	plt.text(1, homo_lumo[i], '{:0.2f}'.format(homo_lumo[i]))
 plt.show()
