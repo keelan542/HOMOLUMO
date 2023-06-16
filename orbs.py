@@ -60,8 +60,6 @@ plt.ylabel('Orbital Energy [eV]')
 plt.text(1, HOMO+((LUMO-HOMO)/2), 'Gap = {:0.2f} eV'.format(gap), horizontalalignment='center', 
 	fontweight='bold', bbox=dict(boxstyle='square, pad=1', ec='none'), color='white')
 for i in range(2):
-	plt.text(1, homo_lumo[i], '{:0.2f}'.format(homo_lumo[i]), fontweight='bold', 
-		horizontalalignment='center', verticalalignment='bottom')
-	plt.text(1, homo_lumo[i], '{label}'.format(label=homo_lumo_labels[i]), fontweight='bold', 
-		horizontalalignment='center', verticalalignment='top')
+	plt.annotate('{level} = {:0.2f}'.format(homo_lumo[i], level=homo_lumo_labels[i]), (1, homo_lumo[i]), 
+		xytext=(0, 5.0), textcoords='offset points', ha='center')
 plt.show()
