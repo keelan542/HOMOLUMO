@@ -58,7 +58,7 @@ plt.tick_params('x', labelbottom=False, bottom=False)
 plt.title('Orbital Energy Plot')
 plt.ylabel('Orbital Energy [eV]')
 plt.text(1, HOMO+((LUMO-HOMO)/2), 'Gap = {:0.2f} eV'.format(gap), horizontalalignment='center', 
-	fontweight='bold', bbox=dict(boxstyle='square, pad=1', ec='none'))
+	fontweight='bold', bbox=dict(boxstyle='square, pad=1', ec='none'), color='white')
 for i in range(2):
 	plt.text(1, homo_lumo[i], '{:0.2f}'.format(homo_lumo[i]), fontweight='bold', 
 		horizontalalignment='center', verticalalignment='bottom')
